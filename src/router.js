@@ -1,8 +1,9 @@
 const { Router } = require("express");
+import "./database/index";
+import UserController from "./app/controllers/UserController";
+
 const routes = new Router();
 
-routes.get("/", (req, res) => {
-  return res.json({ message: "Okay" });
-});
+routes.post("/users", UserController.store);
 
 module.exports = routes;
