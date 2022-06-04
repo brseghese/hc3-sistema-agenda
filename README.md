@@ -6,7 +6,7 @@
 
 ### 🏷️ Projeto
 
-O projeto Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso de Node.js - HTTP GET & HTTP POST do **Programa Hiring Coders #3** da VTEX em parceria com a Gama Academy.
+Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso de Node.js - HTTP GET & HTTP POST do **Programa Hiring Coders #3** da VTEX em parceria com a Gama Academy.
 
 <details>
 <summary>Conteúdos e Recursos do Projeto</summary>
