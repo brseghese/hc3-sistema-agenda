@@ -1,5 +1,6 @@
-const express = require("express");
-const routes = require("./router");
+import express from "express";
+import path from "path";
+import routes from "./router";
 
 class App {
   constructor() {
@@ -9,10 +10,14 @@ class App {
   }
   middlewares() {
     this.server.use(express.json());
+    this.server.use(
+      "/files",
+      express.static(path.resolve(__dirname, "..", "tmp", "uploads"))
+    );
   }
   routes() {
     this.server.use(routes);
   }
 }
 
-module.exports = new App().server;
+export default new App().server;
