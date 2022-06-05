@@ -115,13 +115,24 @@ npm i bcryptjs
 
 O JWT é digitalmente assinado usando uma chave secreta com o algoritmo HMAC ou um par de chaves pública e privada RSA ou ECDSA.
 
-Usaremos para autenticação do Usuário.
-
 ```
 npm i jsonwebtoken
 ```
 
 [MD5 Hash](https://www.md5hashgenerator.com/)
+
+</details>
+
+<details>
+<summary>Validação</summary>
+
+#### 🔶 Yup
+
+Yup faz validações de dados como string , integer , boolean , array , object e date.
+
+```
+npm i yup
+```
 
 </details>
 
