@@ -136,6 +136,51 @@ npm i yup
 
 </details>
 
+<details>
+<summary>Foto do Usuário</summary>
+
+#### 🔶 Multer
+
+O multer é usado junto com o express em alguma rota escolhida. Quando usado, o multer terá opções para armazenar os arquivos, como o destino e nome deles, quais tipos de arquivos e qual o tamanho máximo permitido.
+
+```
+npm i multer
+```
+
+#### 🔶 Crypto
+
+O módulo Crypto ajuda a criptografar, descriptografar ou hash quaisquer dados.
+
+Neste projeto foi usado para gerar uma numeração antes do nome do arquivo de imagem para salvar sem conflito.
+
+#### ✔️ Crie Migration Files
+
+```
+npx sequelize migration:create --name=create-files
+```
+
+#### ✔️ Execute Migration Files
+
+```
+npx sequelize db:migrate
+```
+
+#### 🔶 Relacionamento Users e Files
+
+#### ✔️ Crie Migration User Photos
+
+```
+npx sequelize migration:create --name=user-photos
+```
+
+#### ✔️ Execute Migration User Photos
+
+```
+npx sequelize db:migrate
+```
+
+</details>
+
 ---
 
 ### 📝 License
