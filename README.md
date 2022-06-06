@@ -181,6 +181,23 @@ npx sequelize db:migrate
 
 </details>
 
+<details>
+<summary>Agendamentos</summary>
+
+#### ✔️ Crie Migration Appointments
+
+```
+npx sequelize migration:create --name=appointments
+```
+
+#### ✔️ Execute Migration Appointments
+
+```
+npx sequelize db:migrate
+```
+
+</details>
+
 ---
 
 ### 📝 License
