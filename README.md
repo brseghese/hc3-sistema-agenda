@@ -4,6 +4,8 @@
 
 Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso de Node.js - HTTP GET & HTTP POST do **Programa Hiring Coders #3** da VTEX em parceria com a Gama Academy.
 
+[Clique aqui](https://github.com/brseghese/hiring-coders-3-vtex-gama/tree/main/f1_node_http)🔗 para acessar o repositório com a introdução do curso.
+
 <details>
 <summary>Conteúdos e Recursos do Projeto</summary>
 
@@ -34,8 +36,6 @@ Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso 
 
 </details>
 
-[Clique aqui](https://github.com/brseghese/hiring-coders-3-vtex-gama/tree/main/f1_node_http)🔗 para acessar o repositório com a introdução do curso.
-
 ---
 
 ### 🔧 Ferramentas
@@ -47,10 +47,71 @@ O projeto foi desenvolvido com as seguintes ferramentas:
 - Docker
 - PostgreSQL
 
-#### 📚 Dependências
+#### 📚 Dependências / Pacotes
 
 - Sucrase
 - Sequelize
+- Bcryptjs
+- [JWT](https://jwt.io/)
+- Yup
+- Multer
+- Crypto
+- Data-fns
+
+<details>
+<summary>Descrição</summary>
+
+#### 🔶 Bcryptjs - Hash de Senha
+
+O bcryptjs é uma biblioteca para encriptação de dados.
+
+```
+npm i bcryptjs
+```
+
+#### 🔶 [JWT](https://jwt.io/) - json web token
+
+O JWT é digitalmente assinado usando uma chave secreta com o algoritmo HMAC ou um par de chaves pública e privada RSA ou ECDSA.
+
+```
+npm i jsonwebtoken
+```
+
+#### 🔶 Yup
+
+Yup faz validações de dados como string , integer , boolean , array , object e date.
+
+```
+npm i yup
+```
+
+#### 🔶 Multer
+
+O multer é usado junto com o express em alguma rota escolhida. Quando usado, o multer terá opções para armazenar os arquivos, como o destino e nome deles, quais tipos de arquivos e qual o tamanho máximo permitido.
+
+```
+npm i multer
+```
+
+#### 🔶 Crypto
+
+Usado para gerar uma numeração antes do nome do arquivo de imagem para salvar sem conflito.
+
+#### 🔶 Date-fns
+
+Date fns é um conjunto abrangente de funções para manipular datas em JavaScript no navegador e Node.
+
+```
+npm i date-fns
+```
+
+#### 🔗 Links
+
+[MD5 Hash](https://www.md5hashgenerator.com/)
+
+Usado para criar hasd do JWT.
+
+</details>
 
 ---
 
@@ -85,116 +146,6 @@ npm run dev
 ``` -->
 
 <!-- Abra http://localhost:3000 no seu navegador para ver a aplicação -->
-
----
-
-### ✨ Recursos
-
-<details>
-<summary>Segurança</summary>
-
-#### 🔶 Bcryptjs - Hash de Senha
-
-O bcryptjs é uma biblioteca para encriptação de dados.
-
-```
-npm i bcryptjs
-```
-
-#### 🔶 [JWT](https://jwt.io/) - json web token
-
-O JWT é digitalmente assinado usando uma chave secreta com o algoritmo HMAC ou um par de chaves pública e privada RSA ou ECDSA.
-
-```
-npm i jsonwebtoken
-```
-
-[MD5 Hash](https://www.md5hashgenerator.com/)
-
-</details>
-
-<details>
-<summary>Validação</summary>
-
-#### 🔶 Yup
-
-Yup faz validações de dados como string , integer , boolean , array , object e date.
-
-```
-npm i yup
-```
-
-</details>
-
-<details>
-<summary>Foto do Usuário</summary>
-
-#### 🔶 Multer
-
-O multer é usado junto com o express em alguma rota escolhida. Quando usado, o multer terá opções para armazenar os arquivos, como o destino e nome deles, quais tipos de arquivos e qual o tamanho máximo permitido.
-
-```
-npm i multer
-```
-
-#### 🔶 Crypto
-
-O módulo Crypto ajuda a criptografar, descriptografar ou hash quaisquer dados.
-
-Neste projeto foi usado para gerar uma numeração antes do nome do arquivo de imagem para salvar sem conflito.
-
-#### ✔️ Crie Migration Files
-
-```
-npx sequelize migration:create --name=create-files
-```
-
-#### ✔️ Execute Migration Files
-
-```
-npx sequelize db:migrate
-```
-
-#### 🔶 Relacionamento Users e Files
-
-#### ✔️ Crie Migration User Photos
-
-```
-npx sequelize migration:create --name=user-photos
-```
-
-#### ✔️ Execute Migration User Photos
-
-```
-npx sequelize db:migrate
-```
-
-</details>
-
-<details>
-<summary>Agendamentos</summary>
-
-#### ✔️ Crie Migration Appointments
-
-```
-npx sequelize migration:create --name=appointments
-```
-
-#### ✔️ Execute Migration Appointments
-
-```
-npx sequelize db:migrate
-```
-
-#### 🔶 Date fns
-
-Date fns é um conjunto abrangente de funções para manipular datas em JavaScript no navegador e Node.
-
-```
-npm i date-fns
-```
-
-</details>
 
 ---
 
