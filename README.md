@@ -46,6 +46,8 @@ O projeto foi desenvolvido com as seguintes ferramentas:
 
 - Docker
 - PostgreSQL
+- Postbird
+- MongoDB
 
 #### 📚 Dependências / Pacotes
 
@@ -57,6 +59,7 @@ O projeto foi desenvolvido com as seguintes ferramentas:
 - Multer
 - Crypto
 - Data-fns
+- Mongoose
 
 <details>
 <summary>Descrição</summary>
@@ -103,6 +106,14 @@ Date fns é um conjunto abrangente de funções para manipular datas em JavaScri
 
 ```
 npm i date-fns
+```
+
+#### 🔶 Mongoose
+
+Mongoose é uma biblioteca Node.js baseada em Schemas para modelar os dados de nossa aplicação. Tudo no Mongoose começa com um Schema, e cada schema mapeia uma collection no MongoBD e nessas collections.
+
+```
+npm i mongoose
 ```
 
 #### 🔗 Links
