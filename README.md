@@ -1,9 +1,5 @@
 <h1 align="center" id="topo">Sistema de Agendamento 📖</h1>
 
-<!-- <div align="center">
-<img width='600px' src="./assets/mockup.png" width="35px"/>
-</div> -->
-
 ### 🏷️ Projeto
 
 Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso de Node.js - HTTP GET & HTTP POST do **Programa Hiring Coders #3** da VTEX em parceria com a Gama Academy.
@@ -55,12 +51,6 @@ O projeto foi desenvolvido com as seguintes ferramentas:
 
 - Sucrase
 - Sequelize
-
-<!-- ---
-
-### 🚀 ​ [Clique aqui](https://hc3-search-rep-github.netlify.app/)🔗 e veja a aplicação no ar.
-
-![image](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) -->
 
 ---
 
@@ -194,6 +184,14 @@ npx sequelize migration:create --name=appointments
 
 ```
 npx sequelize db:migrate
+```
+
+#### 🔶 Date fns
+
+Date fns é um conjunto abrangente de funções para manipular datas em JavaScript no navegador e Node.
+
+```
+npm i date-fns
 ```
 
 </details>
