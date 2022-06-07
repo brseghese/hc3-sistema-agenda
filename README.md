@@ -6,8 +6,16 @@ Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso 
 
 [Clique aqui](https://github.com/brseghese/hiring-coders-3-vtex-gama/tree/main/f1_node_http)🔗 para acessar o repositório com a introdução do curso.
 
+---
+
+### 📍 Sobre
+
+O Projeto é um API para controle de agendamentos, onde o usuário faz um agendamento com o prestador de serviço.
+
+O sistema possui cadastro e atualização de usuário com foto, cadastro e atualização de prestador de serviço, cadastro de agendamento verificando horário disponível do prestador de serviço, listagem de agendamentos por usuário, listagem de compromissos por prestador de serviços e data, cadastro e listagem de notificações de agendamento com data, hora e usuário a ser atendido pelo prestador de serviço.
+
 <details>
-<summary>Conteúdos e Recursos do Projeto</summary>
+<summary>Conteúdo do Projeto</summary>
 
 ####
 
@@ -36,33 +44,305 @@ Sistema de Agendamento é um projeto para exercitar os conceitos dados no curso 
 
 </details>
 
----
-
-### 🔧 Ferramentas
-
-O projeto foi desenvolvido com as seguintes ferramentas:
-
-#### 🧪 Tecnologias
-
-- Docker
-- PostgreSQL
-- Postbird
-- MongoDB
-
-#### 📚 Dependências / Pacotes
-
-- Sucrase
-- Sequelize
-- Bcryptjs
-- [JWT](https://jwt.io/)
-- Yup
-- Multer
-- Crypto
-- Data-fns
-- Mongoose
+### 📚 Conceitos
 
 <details>
-<summary>Descrição</summary>
+<summary>REST</summary>
+
+####
+
+REST (Representational State Transfer) é um protocolo de comunicação, baseado no protocolo de hipermídia HTTP. Porém ele não impõe restrições ao formato da mensagem, apenas no comportamento dos componentes envolvidos. A maior vantagem do protocolo REST é sua flexibilidade.
+
+</details>
+
+<details>
+<summary>SOAP</summary>
+
+####
+
+SOAP (Simple Object Access Protocol) é um protocolo baseado em XML para troca de informações em um ambiente distribuido. É utilizado para troca de mensagens entre aplicativos distribuidos pela rede. Estes aplicativos, ou “Web services”, possuem uma interface de acesso simples e bem definida.
+
+</details>
+
+---
+
+### 🛠️ Preparação do Ambiente
+
+<details>
+<summary>Package.json | Express</summary>
+
+#### ✔️ Inicialize o pacote
+
+```
+npm init -y
+```
+
+> -y criar sem perguntas
+
+O arquivo "package.json" é criado.
+
+#### ✔️ Crie a pasta "src" com os respectivos arquivos
+
+- app.js
+- server.js
+- routes.js
+
+#### ✔️ Instale o express
+
+```
+npm i express
+```
+
+</details>
+
+<details>
+<summary>Estrutura básica da API REST</summary>
+
+#### 🔶 server.js
+
+```
+const app = require("./app");
+
+app.listen(3333);
+```
+
+#### 🔶 app.js
+
+```
+const express = require("express");
+const routes = require("./router");
+
+class App {
+  constructor() {
+    this.server = express();
+    this.middlewares();
+    this.routes();
+  }
+  middlewares() {
+    this.server.use(express.json());
+  }
+  routes() {
+    this.server.use(routes);
+  }
+}
+
+module.exports = new App().server;
+```
+
+#### 🔶 router.js
+
+```
+const { Router } = require("express");
+const routes = new Router();
+
+routes.get("/", (req, res) => {
+  return res.json({ message: "Okay" });
+});
+
+module.exports = routes;
+```
+
+#### ✔️ Teste o servidor
+
+```
+node src/server.js
+```
+
+#### ✔️ Abra o navegador e digite
+
+```
+localhost:3333
+```
+
+</details>
+
+<details>
+<summary>Sucrase | Nodemon</summary>
+
+#### 🔶 Sucrase
+
+O Sucrase possibilita o node usar a sintaxe ES6 modules, melhorando a compatibilidade de código do frontend com o backend.
+
+#### ✔️ Instale o [sucrase](https://github.com/alangpierce/sucrase)
+
+```
+npm i sucrase -D
+```
+
+> -D dependência de desenvolvimento
+
+#### 🔶 Nodemon
+
+O nodemon é uma biblioteca que ajuda no desenvolvimento de sistemas com o Node. js reiniciando automaticamente o servidor.
+
+#### ✔️ Instale o nodemon
+
+```
+npm i nodemon -D
+```
+
+> -D dependência de desenvolvimento
+
+#### ✔️ Configure o nodemon
+
+Crie o arquivo "nodemon.json" na pasta raiz e implemente:
+
+```
+{
+  "execMap": {
+    "js": "sucrase-node"
+  }
+}
+```
+
+Inclua no "package.json" na propriedade "scripts"
+
+```
+"dev": "nodemon src/server"
+```
+
+Atualize as importações dos arquivos:
+
+- server.js
+- app.js
+- router.js
+
+#### ✔️ Teste o servidor
+
+```
+npm run dev
+```
+
+> digite localhost:3333 no navegador
+
+</details>
+
+<details>
+<summary>Docker | PostgreSQL</summary>
+
+#### 🔶 Docker
+
+O Docker é uma plataforma open source que facilita a criação e administração de ambientes isolados. Ele possibilita o empacotamento de uma aplicação ou ambiente dentro de um container, se tornando portátil para qualquer outro host que contenha o Docker instalado.
+
+#### ✔️ Faça o download, instale e configure o Docker
+
+[Get Started Docker](https://www.docker.com/)
+
+#### ✔️ Verifique a versão do Docker
+
+```
+docker -v
+```
+
+#### 🔶 PostgreSQL
+
+O PostgreSQL suporta nativamente um grande número de tipos de dados padrão, como JSON, XML, etc. O PostgreSQL obtém vantagem disso, pois é um dos poucos bancos de dados relacionais que oferece forte suporte para a funcionalidade NoSQL. Além disso, permite que os usuários definam seus próprios tipos de dados.
+
+#### ✔️ Instale o PostgreSQL
+
+```
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
+
+#### ✔️ Verifique as imagens instaladas no Docker
+
+```
+docker image ls
+```
+
+#### 🔶 Docker Desktop - em images PostgreSQL
+
+#### ✔️ Clicar em "run"
+
+#### ✔️ Teste o PostgreSQL
+
+```
+docker ps
+```
+
+</details>
+
+<details>
+<summary>ORM Sequelize | Postbird</summary>
+
+#### 🔶 ORM
+
+Object-Relational Mapping (ORM), em português, mapeamento objeto-relacional, é uma técnica para aproximar o paradigma de desenvolvimento de aplicações orientadas a objetos ao paradigma do banco de dados relacional.
+
+#### 🔶 Sequelize
+
+O Sequelize é um ORM(Object/Relational Mapper) baseado em Promise para Node.js e io.js, e suporta os dialetos PostgreSQL, MySQL, MariaDB, SQLite e MSSQL e recursos a transação, relacionamentos, replicação de leitura e muito mais.
+
+#### ✔️ Instale o Sequelize
+
+```
+npm i sequelize
+```
+
+#### ✔️ Instale o CLI do Sequelize
+
+```
+npm install --save-dev sequelize-cli
+```
+
+#### ✔️ Instale o conector do banco de dados PostgreSQL
+
+```
+npm i pg pg-hstore
+```
+
+#### ✔️ ".sequelizerc"
+
+- Configurando o caminho.
+
+#### ✔️ "database.js"
+
+- Configurando o banco de dados.
+
+#### 🔶 Migrations
+
+São classes que executam promises capazes de gerar nossa estrutura na base de dados, ele irá gerar as tabelas, relacionamentos e campos por etapas, para cada nova tabela teremos uma nova migration, não precisa se preocupar o migrate sabe identificar qual foi a última executada.
+
+#### ✔️ Create Migration
+
+```
+npx sequelize migration:create --name=create-users
+```
+
+#### ✔️ Implemente a tabela "users" no Migration "create-users.js"
+
+#### 🔶 Postbird
+
+Postbird é um cliente PostgreSQL GUI de plataforma cruzada. Suporta visualizações, visualizações de materiais, tabelas estrangeiras, restrições, esquemas, conexão com postgres do heroku.
+
+#### ✔️ Instale o Postbird
+
+#### ✔️ Crie uma nova conexão
+
+- Use as configurações do "database.js"
+
+#### ✔️ Crie um database no Postbird
+
+- Nomei de "sistema"
+
+#### ✔️ Crie a tabela com o Sequelize Migrate
+
+```
+npx sequelize db:migrate
+```
+
+#### How back migration
+
+- Caso precise alterar, tudo é apagado, sem volta!
+
+```
+npx sequelize db:migrate:undo
+```
+
+</details>
+
+<details>
+<summary>Bcryptjs | JWT | Yup | Multer | Crypto | Date-fns | Mongoose</summary>
 
 #### 🔶 Bcryptjs - Hash de Senha
 
@@ -123,6 +403,16 @@ npm i mongoose
 Usado para criar hasd do JWT.
 
 </details>
+
+---
+
+### 🧪 Tecnologias
+
+- Docker
+- PostgreSQL
+- Thunder Client
+- Postbird
+- MongoDB
 
 ---
 
